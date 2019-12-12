@@ -1,0 +1,53 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        google()
+
+        maven{
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.1'
+        classpath "gradle.plugin.nl.javadude.gradle.plugins:license-gradle-plugin:0.13.1"
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+plugins {
+    id "com.jfrog.bintray" version "1.6"
+    id "com.jfrog.artifactory" version "4.4.0"
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+
+    configurations.all {
+        apply plugin: 'com.github.hierynomus.license'
+
+        license {
+            header rootProject.file('LICENSE_HEADER')
+            exclude("**/ic_settings.xml")
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    supportVersion = "27.0.2"
+    compileVersion = 27
+    targetVersion = 27
+    buildToolsVersion = "26.0.2"
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/center_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="in.loansimple.picdialog.ImageActivity">
+
+    <LinearLayout
+            android:elevation="50dp"
+            android:id="@+id/dialog_frag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <com.airbnb.lottie.LottieAnimationView
+                        android:layout_gravity="center"
+                        android:id="@+id/image_error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/image_text"
+                        android:visibility="gone"
+                        android:textSize="18sp"
+                        android:textColor="#FFF"
+                        android:text="@string/image_load"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <in.loansimple.picdialog.zoomage.ZoomageView
+                    android:id="@+id/image"
+                    android:layout_gravity="center"
+                    app:zoomage_autoCenter="true"
+                    app:zoomage_zoomable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/close_btn"
+                    android:layout_gravity="center|bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:elevation="8dp"
+                    app:backgroundTint="#FFF"
+                    android:layout_margin="16dp"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

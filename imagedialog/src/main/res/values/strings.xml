@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ImageDialog</string>
+    <string name="image_load">Unable to load image</string>
+</resources>
