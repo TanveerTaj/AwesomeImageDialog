@@ -20,7 +20,7 @@ Step 2. Add the dependency
 	}
 
 ### Demo Code
-        ```
+      
         button.setOnClickListener {
             PicDialog.Builder(this)
                 .setOutSideDismiss(true)
@@ -31,4 +31,4 @@ Step 2. Add the dependency
                 .build()
                 .show()
         }
-        ```
+        
