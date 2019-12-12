@@ -24,10 +24,12 @@ Step 2. Add the dependency
         button.setOnClickListener {
             PicDialog.Builder(this)
                 .setOutSideDismiss(true)
-        // for setting uri
-                .setUri(Uri.parse("URI"))
-        // for setting url               
+        // for setting uri - setUri("URI")
+                .setUri("URI")
+        // for setting url - setUrl("URL")               
                 .setUrl("URL")
+	// for setting url - setFile(file)              
+                .setFile(file)
                 .build()
                 .show()
         }
